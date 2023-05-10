@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--lo que va dentro de head no es para la pagina en si. son cosas del navegar etc.. -->
+        <title>BTS Game Rock Paper Scissors</title> <!-- añade este título a la pestaña de chrome -->
+        <script>
+            function getRandomNumber(minNumber, maxNumber){
+                return Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber)
+            }
+
+            let rock = 1
+            let paper = 2
+            let scissors = 3
+
+            //selections
+            let player = prompt("Choose: 1 for rock, 2 for paper, 3 for  scissors")
+            const MIN = 1
+            const MAX = 3
+            let computer = getRandomNumber(MIN, MAX)
+
+            if (player == 1) {
+                alert("You chose rock")
+            } else if (player == 2) {
+                alert("You chose paper")
+            } else if (player == 3) {
+                alert("You chose scissors")
+            } else {
+                alert("You lose")
+            }
+
+            alert("Computer chose " + computer)
+            if (computer == 1) {
+                alert("Computer chose rock")
+            } else if (computer == 2) {
+                alert("Computer chose paper")
+            } else if (computer == 3) {
+                alert("Computer chose scissors")
+            }
+
+            //game itself
+            if (player == computer){
+                alert("It's a tie")
+            } else if (player == 1 && computer == 3){
+                alert("You win with rock")
+            } else if (player == 2 && computer == 1){
+                alert("You win with paper")
+            } else if (player == 3 && computer == 2){
+                alert("You win with scissors")
+            } else {
+                alert("You lose")
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Page</h1>
+        <p>Page content goes here.</p>
+    </body>
+</html>
