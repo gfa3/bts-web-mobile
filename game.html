@@ -8,51 +8,73 @@
                 return Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber)
             }
 
+            function getSymbol(playernumber){
+                if (playernumber == 1) {
+                    alert("You chose rock")
+                } else if (playernumber == 2) {
+                    alert("You chose paper")
+                } else if (playernumber == 3) {
+                    alert("You chose scissors")
+                } else {
+                    alert("You lose")
+                }
+            }
+
+            function getSymbolComputer(computernumber){
+                if (computernumber == 1) {
+                    alert("Computer chose rock")
+                } else if (computernumber == 2) {
+                    alert("Computer chose paper")
+                } else if (computernumber == 3) {
+                    alert("Computer chose scissors")
+                } 
+            }
+
             let rock = 1
             let paper = 2
             let scissors = 3
+            let computerwins = 0
+            let playerwins = 0
 
             //selections
-            let player = prompt("Choose: 1 for rock, 2 for paper, 3 for  scissors")
-            const MIN = 1
-            const MAX = 3
-            let computer = getRandomNumber(MIN, MAX)
+            while (computerwins < 3 && playerwins < 3){
+                let player = prompt("Choose: 1 for rock, 2 for paper, 3 for  scissors")
+                const MIN = 1
+                const MAX = 3
+                let computer = getRandomNumber(MIN, MAX)
+                
+                //player choice
+                getSymbol(player)
 
-            if (player == 1) {
-                alert("You chose rock")
-            } else if (player == 2) {
-                alert("You chose paper")
-            } else if (player == 3) {
-                alert("You chose scissors")
-            } else {
-                alert("You lose")
-            }
+                //computer choice
+                getSymbolComputer(computer)
 
-            alert("Computer chose " + computer)
-            if (computer == 1) {
-                alert("Computer chose rock")
-            } else if (computer == 2) {
-                alert("Computer chose paper")
-            } else if (computer == 3) {
-                alert("Computer chose scissors")
-            }
+                //decide winner
+                if (player == computer){
+                    alert("It's a tie")
+                } else if (player == 1 && computer == 3){
+                    alert("You win with rock")
+                    playerwins = playerwins + 1
+                } else if (player == 2 && computer == 1){
+                    alert("You win with paper")
+                    playerwins = playerwins + 1
+                } else if (player == 3 && computer == 2){
+                    alert("You win with scissors")
+                    playerwins = playerwins + 1
+                } else {
+                    alert("You lose")
+                    computerwins = computerwins + 1
+                }
 
-            //game itself
-            if (player == computer){
-                alert("It's a tie")
-            } else if (player == 1 && computer == 3){
-                alert("You win with rock")
-            } else if (player == 2 && computer == 1){
-                alert("You win with paper")
-            } else if (player == 3 && computer == 2){
-                alert("You win with scissors")
-            } else {
-                alert("You lose")
+                //ganador de 3 partidas
+                alert("Computer: " + computerwins + " vs Player: " + playerwins)
+                
             }
+            
         </script>
     </head>
     <body>
-        <h1>Page</h1>
-        <p>Page content goes here.</p>
+        <h1>Game</h1>
+        <p>Rock Paper Scissors</p>
     </body>
 </html>
