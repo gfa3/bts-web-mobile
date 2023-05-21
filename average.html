@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Students Average</title>
+        <script>
+            //comentario javascript
+
+            let arrayGrades = [1.5,3,3.2,7,8.7,9,4.2,4,2.9,10,6,5]
+            let lenght = arrayGrades.length
+            let sumGrades = 0
+            let finalSum = 0
+        
+            alert(arrayGrades)
+            console.log(lenght)
+
+
+            for (let y = 0; y < lenght; y++){
+                sumGrades = arrayGrades[y] + sumGrades
+                console.log(sumGrades)
+            }
+            
+            finalSum = Math.round(sumGrades/lenght)
+            console.log(finalSum)
+            
+            alert("The average grade is " + finalSum)
+
+        </script>
+    </head>
+    <body>
+        <h1>Students Average</h1>
+        <p>Assignment 2.</p>
+    </body>
+</html>

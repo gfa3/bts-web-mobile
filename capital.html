@@ -8,9 +8,9 @@
             let inputAmount = prompt("Insert the amount to invest:")
             let inputInterest = prompt("Insert the annual percentage interest:")
             let inputYears = prompt("Insert the number of years:")
-            let amount = parseInt(inputAmount)
-            let interest = parseInt(inputInterest)
-            let years = parseInt(inputYears)
+            let amount = Number(inputAmount)
+            let interest = Number(inputInterest)
+            let years = Number(inputYears)
             
             function getCapital(InitialAmount, InitialInterest){
                 return InitialAmount * (InitialInterest/100) + InitialAmount
